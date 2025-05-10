@@ -45,11 +45,11 @@ function start() {
         }
     }
     
-    window.location.href = "../html/start.html"
+    window.location.href = "html/start.html"
 }
 
 function cont() {
-    window.location.href = '../html/paths.html';
+    window.location.href = 'html/paths.html';
 }
 
 function showSettings() {
