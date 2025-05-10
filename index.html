@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paths AI</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/index.js"></script>
+    <!-- Pixel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Paths AI</h1>
+    <button onclick="start()">Start</button>
+    <button id="continue" onclick="cont()">Continue</button>
+    <button id="settings_button" onclick="showSettings()">Settings</button>
+    <h2 id="credits">Made possible by <a target="_blank" rel="noopener noreferrer" href="https://pollinations.ai">PollinationsAI</a></h2>
+
+    <dialog id="settings">
+        <button class="X" onclick="closeSettings()">X</button>
+        <div class="top">
+            <h1>Settings</h1>
+            <hr>
+        </div>
+        <div class="bottom">
+            <div>
+                <div>
+                    <h2>Max Tokens</h2>
+                    <input type="range" id="max-tokens" oninput="tokensChange()" min="64" max="8192" value="4096">
+                    <label for="max-tokens" id="max-tokens-label">4096</label>
+                </div>
+
+                <div>
+                    <h2>Temperature</h2>
+                    <input type="range" id="temperature" oninput="temperatureChange()" min="0.1" max="1" step="0.1" value="0.7">
+                    <label for="temperature" id="temperature-label">0.7</label>
+                    <button id="reset" onclick="resetConfigToDefault()">Reset</button>
+                </div>
+            </div>
+
+            <div>
+                <h2>Image Model</h2>
+                <select id="image_model" onchange="saveImageModel()">
+                    <option value="flux">FLUX</option>
+                    <option value="turbo">SDXL TURBO</option>
+                </select>
+            </div>
+        </div>
+    </dialog>
+</body>
+</html>

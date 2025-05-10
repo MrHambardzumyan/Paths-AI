@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start | Paths AI</title>
+    <link rel="stylesheet" href="../css/start.css">
+    <script src="../js/start.js"></script>
+    <!-- Pixel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked-footnote/dist/index.umd.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="back" onclick="back()">Back</button>
+    <form method="POST" onsubmit="formSubmit(event)">
+        <h1>Information</h1>
+        <p>Please input information about yourself. This could be general or specific—feel free to include your weekly routine, struggles, hobbies, relationships, or anything else relevant.</p>
+        <textarea placeholder="Enter information here..." required id="input"></textarea>
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <dialog id="loading">
+        <h1>Loading</h1>
+        <h2 id="dots">.</h2>
+    </dialog>
+
+    <!-- Scripts -->
+     <script src="../js/start.js"></script>
+</body>
+</html>
