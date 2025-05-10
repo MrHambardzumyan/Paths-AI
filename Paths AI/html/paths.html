@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map | Paths AI</title>
+    <link rel="stylesheet" href="../css/paths.css">
+    <!-- Pixel Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <!-- Marked -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked-footnote/dist/index.umd.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="back" onclick="back()">Back</button>
+    <button id="journals" onclick="openJournals()">+</button>
+
+    <div class="good">
+        <h1>Good Path</h1>
+    </div>
+    
+    <div class="neutral">
+        <h1>Neutral Path</h1>
+    </div>
+
+    <div class="bad">
+        <h1>Bad Path</h1>
+    </div>
+
+    <dialog id="journals_popup">
+        <button id="close-journal-popup" onclick="closeJournals()">X</button>
+        <div>
+            <h1>Journals</h1>
+            <div class="top-bar">
+                <button id="delete-all-journal" onclick="deleteAllJournals()">Delete All Journals</button>
+                <button id="new-journal" onclick="showNewJournalEntry()">Add New Journal</button>
+            </div>
+            <div id="journal_list">
+
+            </div>
+
+        </div>
+    </dialog>
+
+    <dialog id="journal_entry_popup">
+        <button id="close-journal-entry-popup" onclick="closeNewJournalEntry()">X</button>
+        <div id="entry_inner_container">
+            <h1>Enter your entry</h1>
+            <p>Write about what you have done since the last entry. Mention any improvement or decline.</p>
+            <textarea id="entry_input" placeholder="Describe any progress or setbacks since your last entry..." oninput="checkConditionsForEntrySubmission()"></textarea>
+            <button id="submit_entry" onclick="addNewJournal()" disabled>Submit</button>
+        </div>
+    </dialog>
+
+    <dialog id="past_journal_entry">
+        <div class="top-bar">
+            <button id="regenerate_entry">Regenerate</button>
+            <button id="close-past-journal-entry" onclick="closePastJournalEntry()">X</button>
+        </div>
+        <div id="past_entry_inner_container">
+           
+        </div>
+    </dialog>
+
+    <dialog id=loading_popup>
+        <h1>Loading</h1>
+        <h2 id="dots">.</h2>
+    </dialog>
+
+    <!-- Scripts -->
+    <script src="../js/paths.js"></script>
+</body>
+</html>
